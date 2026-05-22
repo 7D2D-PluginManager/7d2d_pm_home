@@ -134,7 +134,7 @@ public class HomePlugin : BasePlugin
     private IPlayerLocalization GetPlayerLocalization()
     {
         var playerLanguageStore = Capabilities.Get<IPlayerLanguageStore>();
-        return _localization = new JsonPlayerLocalizationFactory(playerLanguageStore)
+        return new JsonPlayerLocalizationFactory(playerLanguageStore)
             .Create(Path.Combine(ModulePath, "lang"));
     }
 
