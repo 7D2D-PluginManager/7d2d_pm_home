@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using PluginManager.Api;
 using PluginManager.Api.Capabilities.Implementations.Commands;
@@ -106,7 +107,7 @@ public class HomePlugin : BasePlugin
         if (_nextTeleportTime.TryGetValue(platformId, out var nextTeleportTime) && nextTeleportTime > unixTime)
         {
             var cooldown = TimeSpan.FromSeconds(unixTime - nextTeleportTime);
-            Reply(ctx, "Teleport cooldown", cooldown);
+            Reply(ctx, "Teleport cooldown", cooldown.ToString("c", CultureInfo.InvariantCulture));
             return;
         }
 

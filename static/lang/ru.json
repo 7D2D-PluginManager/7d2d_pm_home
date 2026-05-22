@@ -5,7 +5,7 @@
   "Bad args remove home": "Удалить дом: [6FDC64]/delhome <имя>[-]",
   "Bad args tp home": "Переместиться к дому: [6FDC64]/home <имя>[-]",
 
-  "Teleport cooldown": "Быстрое перемещение перезаряжается: [6FDC64]{0:hh\\:mm\\:ss}[-]",
+  "Teleport cooldown": "Быстрое перемещение перезаряжается: [6FDC64]{0}[-]",
 
   "Home saved": "Дом сохранён: [F0A66D]{0}[-]",
   "Home removed": "Дом удалён: [F0A66D]{0}[-]",

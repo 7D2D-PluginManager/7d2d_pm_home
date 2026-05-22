@@ -5,7 +5,7 @@
   "Bad args remove home": "Remove home: [6FDC64]/delhome <name>[-]",
   "Bad args tp home": "Go home: [6FDC64]/home <name>[-]",
 
-  "Teleport cooldown": "Quick teleport on cooldown: [6FDC64]{0:hh\\:mm\\:ss}[-]",
+  "Teleport cooldown": "Quick teleport on cooldown: [6FDC64]{0}[-]",
 
   "Home saved": "Home saved: [F0A66D]{0}[-]",
   "Home removed": "Home removed: [F0A66D]{0}[-]",
