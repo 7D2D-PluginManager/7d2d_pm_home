@@ -106,7 +106,7 @@ public class HomePlugin : BasePlugin
 
         if (_nextTeleportTime.TryGetValue(platformId, out var nextTeleportTime) && nextTeleportTime > unixTime)
         {
-            var cooldown = TimeSpan.FromSeconds(unixTime - nextTeleportTime);
+            var cooldown = TimeSpan.FromSeconds(nextTeleportTime - unixTime);
             Reply(ctx, "Teleport cooldown", cooldown.ToString("c", CultureInfo.InvariantCulture));
             return;
         }
