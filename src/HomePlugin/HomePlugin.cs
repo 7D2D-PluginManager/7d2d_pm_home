@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using PluginManager.Api;
 using PluginManager.Api.Capabilities.Implementations.Commands;
 using PluginManager.Api.Capabilities.Implementations.Translations;
@@ -125,21 +124,18 @@ public class HomePlugin : BasePlugin
 
     private ITeleportRepository GetRepository()
     {
-        SQLitePCL.raw.SetProvider(new SQLitePCL.SQLite3Provider_sqlite3());
-        SQLitePCL.raw.FreezeProvider();
-
-        return new SqliteTeleportRepository($"Data Source={Path.Combine(ModulePath, "teleports.db")};");
+        return new JsonTeleportRepository(Store);
     }
 
     private IPlayerLocalization GetPlayerLocalization()
     {
         var playerLanguageStore = Capabilities.Get<IPlayerLanguageStore>();
         return new JsonPlayerLocalizationFactory(playerLanguageStore)
-            .Create(Path.Combine(ModulePath, "lang"));
+            .Create(LangDirectory, Id);
     }
 
     private PluginConfig ReadPluginConfig()
     {
-        return new JsonConfigReader().Read<PluginConfig>(Path.Combine(ModulePath, "config.json"));
+        return new JsonConfigReader().Read<PluginConfig>(ConfigPath);
     }
 }

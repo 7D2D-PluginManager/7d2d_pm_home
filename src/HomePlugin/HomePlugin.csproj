@@ -50,16 +50,15 @@
         <Compile Include="HomePlugin.cs" />
         <Compile Include="ITeleportRepository.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
-        <Compile Include="SqliteTeleportRepository.cs" />
+        <Compile Include="JsonTeleportRepository.cs" />
         <Compile Include="TeleportPoint.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <ItemGroup>
-        <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="9.0.3" />
-        <PackageReference Include="SQLitePCLRaw.core" Version="2.1.10" />
-        <PackageReference Include="SQLitePCLRaw.provider.sqlite3" Version="2.1.10" />
-    </ItemGroup>
-    <ItemGroup>
+        <Reference Include="Newtonsoft.Json">
+            <HintPath>$(PluginManagerApiPath)Newtonsoft.Json.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
         <Reference Include="PluginManager.Api">
             <HintPath>$(PluginManagerApiPath)PluginManager.Api.dll</HintPath>
             <Private>False</Private>
